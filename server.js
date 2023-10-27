@@ -43,8 +43,7 @@ io.on("connection", async (socket) => {
 
   socket.on("sendMessage", (input) => {
     console.log(input);
-    socket.emit("receiveMessage", input);
-    // socket.to(onlineUser[input?.to]).emit("receiveMessage", input);
+    io.emit("receiveMessage", input);
   });
 
   socket.on("disconnect", () => {
